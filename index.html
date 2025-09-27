@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>St. Ursular’s School </title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <style>
+    .top-bar {
+      background: #0d263d;
+      color: #fff;
+      padding: 5px 20px;
+      font-size: 14px;
+      text-align: center; 
+    }
+    .top-bar a {
+      color: #ffcc00;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    
+     .navbar {
+      background: #f0ecec;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .navbar-brand img {
+      height: 80px;
+    }
+    .nav-link {
+      font-weight: 500;
+      margin-right: 15px;
+    }
+    .nav-link:hover {
+      color: #004080 !important;
+    }
+    .top-bar .btn {
+ position: right;
+  font-size: 12px;
+  padding: 3px 8px;
+}
+@media (max-width: 768px) {
+  .top-bar .d-flex {
+    flex-direction: column;
+    text-align: center;
+    gap: 5px;
+  }
+}
+.custom-dark-blue {
+  color: #0d1b4c;   
+  font-size: 1.25rem; 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.6); 
+}
+.btn-apply-now {
+  border-radius: 50px; 
+  padding: 12px 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-apply-now:hover {
+  background-color: #19530e !important; 
+  color: #fff !important;              
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.35);
+}
+.moving-text {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: moveText 12s linear infinite;
+  }
+
+  @keyframes moveText {
+    0%   { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+
+
+  
+    .staff-card {
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border-radius: 15px;
+    }
+    .staff-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+    .staff-img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      margin-top: -70px;
+      border: 5px solid #fff;
+    }
+    .card-img-top {
+      position: relative;
+      top: -50px;
+    }
+    .text-cyan {
+  color: rgb(19, 152, 161) !important;
+}
+
+.section-title {
+    display: inline-block;
+    border-bottom: 3px solid #f1c40f; 
+    padding-bottom: 5px;
+  }
+ 
+    .section-title {
+      display: inline-block;
+      border-bottom: 3px solid #0d6efd; 
+      padding-bottom: 5px;
+    }
+
+
+
+   
+@keyframes bounceIn {
+  0% { transform: translateY(50px); opacity: 0; }
+  50% { transform: translateY(-10px); opacity: 1; }
+  70% { transform: translateY(5px); }
+  100% { transform: translateY(0); }
+}
+
+.bounce-on-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.bounce-on-scroll.visible {
+  animation: bounceIn 1s ease forwards;
+}
+
+
+
+
+
+.testimonial-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+
+.testimonial-card img {
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover img {
+  transform: scale(1.1);
+}
+
+.line {
+  width: 100px;
+  height: 2px;
+  background-color: #0d1b4c;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+
+section.text-center h2 {
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #0d1b4c;
+}
+  
+  </style>
+</head>
+<body>
+      <!-- Top Bar -->
+  <div class="container-fluid bg-dark text-light py-2 fixed-top" style="top:0; z-index:1030;">
+    <div class="d-flex justify-content-between align-items-center flex-wrap">
+      <div class="text-warning fw-bold">
+        📞 Tel: 
+        <a href="tel:0724133020" class="btn btn-sm btn-outline-warning ms-1">
+          0724133020
+        </a>
+      </div>
+      <div>
+        <a href="mailto:Ursulineschool2006@gmail.com" class="fw-bold text-decoration-none" style="color:rgb(255, 251, 0);">
+          <i class='bx bx-envelope-open me-2'></i>Ursulineschool2006@gmail.com
+        </a>
+      </div>
+      <div class="d-flex align-items-center">
+        <span class="me-3 fw-bold moving-text text-info">
+          Welcome to <strong>St. Ursular’s School</strong>
+        </span>
+        <a href="#apply" class="btn btn-warning btn-sm fw-bold text-dark">
+          Apply Now
+        </a>
+      </div>
+    </div>
+  </div>
+  
+
+  
+  <nav class="navbar navbar-expand-lg" style="margin-top: 50px;">
+
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <div class="d-flex align-items-center">
+            
+             
+              <img src="logo-removebg-preview.png" alt="St. Ursular's Logo">
+            </div>
+          </a>
+          
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+    
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+         
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="academicsDropdown" role="button" data-bs-toggle="dropdown">
+              ACADEMICS
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Primary School</a></li>
+              <li><a class="dropdown-item" href="#">Preparatory School</a></li>
+              <li><a class="dropdown-item" href="#">Kindergarten</a></li>
+              <li><a class="dropdown-item" href="#">CBE</a></li>
+              <li><a class="dropdown-item" href="#">CBC</a></li>
+              <li><a class="dropdown-item" href="#">Junior Secondary</a></li>
+              <li><a class="dropdown-item" href="#">Senior Secondary</a></li>
+              <li><a class="dropdown-item" href="#">Academic Calendar</a></li>
+              <li><a class="dropdown-item" href="#">Assessment & Reporting</a></li>
+
+            </ul>
+          </li>
+
+       
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="programsDropdown" role="button" data-bs-toggle="dropdown">
+              PROGRAMS
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Remedial / Enrichment Classes</a></li>
+              <li><a class="dropdown-item" href="#">Language Programs</a></li>
+              <li><a class="dropdown-item" href="#">STEM / ICT Integration</a></li>
+              <li><a class="dropdown-item" href="#">Congress</a></li>
+              <li><a class="dropdown-item" href="#">Contests</a></li>
+              <li><a class="dropdown-item" href="#">Exams</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="newsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                ADMISSIONS
+            </a>
+
+            <ul class="dropdown-menu" aria-labelledby="newsDropdown">
+                <li><a class="dropdown-item" href="#">Admission Requirements (Primary & Senior High)</a></li>
+                <li><a class="dropdown-item" href="#">Scholarships & Financial Aid</a></li>
+                <li><a class="dropdown-item" href="#">Tuition & Fees</a></li>
+                <li><a class="dropdown-item" href="#">Application Forms </a></li>
+               
+              </ul>
+            </li>
+    
+          <li class="nav-item"><a class="nav-link" href="#">GALLERY</a></li>
+
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="newsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                STUDENT LIFE
+            </a>
+
+          <ul class="dropdown-menu" aria-labelledby="newsDropdown">
+            <li><a class="dropdown-item" href="#">Clubs & Societies</a></li>
+            <li><a class="dropdown-item" href="#">Sports & Physical Education</a></li>
+            <li><a class="dropdown-item" href="#">Arts & Culture</a></li>
+            <li><a class="dropdown-item" href="#">School Events & Celebrations</a></li>
+            <li><a class="dropdown-item" href="#">School Tours</a></li>
+            <li><a class="dropdown-item" href="#">Leadership & Prefects</a></li>
+          </ul>
+        </li>
+
+
+
+
+          <li class="nav-item"><a class="nav-link" href="#">ABOUT US</a></li>
+
+          
+          <li class="nav-item"><a class="nav-link" href="#">CONTACT US</a></li>
+
+       
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="newsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      NEWS & ANNOUNCEMENTS
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="newsDropdown">
+      <li>
+        <a class="dropdown-item" href="#">
+          <i class='bx bx-calendar-event'></i> Upcoming Events
+        </a>
+      </li>
+      <li>
+        <a class="dropdown-item" href="#">
+          <i class='bx bx-book-open'></i> Term Dates & Exams
+        </a>
+      </li>
+      <li>
+        <a class="dropdown-item" href="#">
+          <i class='bx bx-money'></i> Fee Structure
+        </a>
+      </li>
+      <li>
+        <a class="dropdown-item" href="#">
+          <i class='bx bx-news'></i> Bulletins
+        </a>
+      </li>
+    </ul>
+  </li>
+  
+      </div>
+    </div>
+  </nav>
+
+<div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+  
+      
+      <div class="carousel-item active">
+        <img src="hero (2).jpg" class="d-block w-100" alt="Library">
+        <div class="carousel-caption d-none d-md-block">
+          <h2 class="fw-bold">St. Ursular’soffers excellent student facilities</h2>
+          <p>Including a modern Library for digital learning.</p>
+          <a href="#apply" class="btn btn-warning btn-lg fw-bold text-dark btn-apply-now">
+            Apply Now
+          </a>
+          
+
+
+        </div>
+      </div>
+  
+     
+      <div class="carousel-item">
+        <img src="sports.jpg" class="d-block w-100" alt="Sports">
+        
+       
+        <div class="carousel-caption d-none d-md-block  bg-opacity-50 p-3 rounded">
+          <h2 class="fw-bold text-warning">Balanced Academics & Sports</h2>
+          <p class="fw-bold custom-dark-blue">
+            We nurture talents in athletics, football, and more.
+          </p>
+          
+
+        </div>
+      </div>
+      
+  
+      
+      <div class="carousel-item">
+        <img src="modern classrom.jpg" class="d-block w-100" alt="Classrooms">
+        <div class="carousel-caption d-none d-md-block">
+          <h2 class="fw-bold">Modern Classrooms</h2>
+          <p>Conducive learning environment for all learners.</p>
+          <a href="#apply" class="btn btn-warning btn-lg fw-bold text-dark btn-apply-now">
+            Apply Now
+          </a>
+        </div>
+      </div>
+  
+    </div>
+  
+ 
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  
+    <!-- Indicators -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+    </div>
+  </div>
+  
+
+
+<section class="py-5 bg-light">
+    <div class="container">
+      <div class="row align-items-center">
+        
+       
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <div id="aboutCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="about5.jpg" class="d-block w-100 rounded shadow" alt="about5">
+              </div>
+              <div class="carousel-item">
+                <img src="library.jpg" class="d-block w-100 rounded shadow" alt="library">
+              </div>
+              <div class="carousel-item">
+                <img src="about4.jpg" class="d-block w-100 rounded shadow" alt="games">
+              </div>
+              <div class="carousel-item">
+                <img src="about3.jpg" class="d-block w-100 rounded shadow" alt="students">
+              </div>
+            </div>
+  
+            <!-- Controls -->
+            <button class="carousel-control-prev" type="button" data-bs-target="#aboutCarousel" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#aboutCarousel" data-bs-slide="next">
+              <span class="carousel-control-next-icon"></span>
+            </button>
+          </div>
+        </div>
+  
+  
+        <div class="col-lg-6">
+          <h2 class="fw-bold text-primary mb-3">Welcome To St. Ursular’s School</h2>
+          <p class="lead">
+            St. Ursular’s School is committed to academic excellence, character development, 
+            and nurturing talents through a balanced approach in academics, sports, and co-curricular activities. 
+            It is an established institution focused on academic excellence and holistic development. 
+            The school aims to produce well-rounded, self-confident students through strong academics and 
+            a range of extra-curricular activities including music, swimming, gymnastics, chess, and karate, 
+            with a particular emphasis on fostering moral values.
+          </p>
+  
+         
+          <div class="d-flex flex-wrap align-items-center mt-4">
+           
+            <a href="#apply" class="btn btn-warning fw-bold text-dark me-4 mb-3">
+              Apply Now
+            </a>
+  
+           
+            <div class="row text-center flex-grow-1">
+              <div class="col-6 mb-3">
+                <h4 class="fw-bold text-primary auto-count" data-target="1500">0</h4>
+                <p class="mb-0">Students</p>
+              </div>
+              <div class="col-6 mb-3">
+                <h4 class="fw-bold text-primary auto-count" data-target="50">0</h4>
+                <p class="mb-0">Staff</p>
+              </div>
+              <div class="col-6 mb-3">
+                <h4 class="fw-bold text-primary">100%</h4>
+                <p class="mb-0">Discipline</p>
+              </div>
+              <div class="col-6 mb-3">
+                <h4 class="fw-bold text-primary">100%</h4>
+                <p class="mb-0">Sports</p>
+              </div>
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </section>
+
+<section class="py-5 bg-light">
+    <div class="container">
+     
+  
+      <div id="activitiesCarousel" class="carousel slide" data-bs-ride="carousel">
+        <div class="carousel-inner">
+  
+       
+          <div class="carousel-item active">
+            <div class="row align-items-center">
+              <div class="col-lg-6 mb-3">
+                <img src="music.jpeg" class="d-block w-100 rounded shadow" alt="Music Club">
+              </div>
+              <div class="col-lg-6 text-center text-lg-start">
+                <h3 class="fw-bold text-dark">Music & Choir</h3>
+                <p class="lead">Our school choir and music programs allow students to explore their talents in singing and playing instruments.</p>
+                <a href="#apply" class="btn btn-warning btn-lg fw-bold text-dark btn-apply-now">
+                    Apply Now
+                  </a>
+            
+            </div>
+            </div>
+          </div>
+  
+          
+          <div class="carousel-item">
+            <div class="row align-items-center">
+              <div class="col-lg-6 mb-3">
+                <img src="sports.jpg" class="d-block w-100 rounded shadow" alt="Sports Activities">
+              </div>
+              <div class="col-lg-6 text-center text-lg-start">
+                <h3 class="fw-bold text-dark">Sports & Athletics</h3>
+                <p class="lead">We nurture talents in football, athletics, swimming, gymnastics, and more.</p>
+                <a href="#apply" class="btn btn-warning btn-lg fw-bold text-dark btn-apply-now">
+                    Apply Now
+                  </a>
+            </div>
+            </div>
+          </div>
+  
+          <!-- Activity 3 -->
+          <div class="carousel-item">
+            <div class="row align-items-center">
+              <div class="col-lg-6 mb-3">
+                <img src="chess.jpg" class="d-block w-100 rounded shadow" alt="Chess Club">
+              </div>
+              <div class="col-lg-6 text-center text-lg-start">
+                <h3 class="fw-bold text-dark">Chess & Mind Games</h3>
+                <p class="lead">Our chess club helps students sharpen their problem-solving, focus, and critical thinking skills.</p>
+                <a href="#apply" class="btn btn-warning btn-lg fw-bold text-dark btn-apply-now">
+                    Apply Now
+                  </a>
+            </div>
+            </div>
+          </div>
+  
+          <!-- Activity 4 -->
+          <div class="carousel-item">
+            <div class="row align-items-center">
+              <div class="col-lg-6 mb-3">
+                <img src="Drama.jpg" class="d-block w-100 rounded shadow" alt="Drama Club">
+              </div>
+              <div class="col-lg-6 text-center text-lg-start">
+                <h3 class="fw-bold text-dark">Drama & Arts</h3>
+                <p class="lead">Drama, dance, and art activities encourage creativity, self-expression, and confidence.</p>
+                <a href="#apply" class="btn btn-warning btn-lg fw-bold text-dark btn-apply-now">
+                    Apply Now
+                  </a>
+            </div>
+            </div>
+          </div>
+  
+        </div>
+  
+        <!-- Controls -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#activitiesCarousel" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon"></span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#activitiesCarousel" data-bs-slide="next">
+          <span class="carousel-control-next-icon"></span>
+        </button>
+      </div>
+    </div>
+  </section>
+    
+ 
+  
+  
+  
+
+
+
+  <section class="py-5 bg-light">
+    <div class="container">
+      <h2 class="fw-bold text-center text-primary mb-5">Our Staff & Management</h2>
+      
+      <div class="row g-4">
+  
+        <div class="col-md-4">
+          <div class="card staff-card h-100 text-center">
+            <div class="card-header bg-transparent border-0">
+              <img src="tr1.jpeg" class="rounded-circle staff-img shadow mx-auto d-block" alt="Principal">
+            </div>
+            <div class="card-body">
+              <h5 class="fw-bold text-warning">Mrs. Mary</h5>
+              <p class="mb-2 text-cyan">Principal</p>
+
+
+              <p class="small">Leading with excellence and guiding students towards success.</p>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+              <a href="#" class="btn btn-sm btn-outline-primary rounded-circle me-2"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="btn btn-sm btn-outline-info rounded-circle me-2"><i class="bx bxl-twitter"></i></a>
+              <a href="#" class="btn btn-sm btn-outline-danger rounded-circle"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+  
+        <div class="col-md-4">
+          <div class="card staff-card h-100 text-center">
+            <div class="card-header bg-transparent border-0">
+              <img src="tr2.jpeg" class="rounded-circle staff-img shadow mx-auto d-block" alt="Head of Science">
+            </div>
+            <div class="card-body">
+              <h5 class="fw-bold text-warning">Mr. John Sawe</h5>
+              <p class="mb-2 text-cyan">Head of Science</p>
+              <p class="small">Encouraging critical thinking and innovation in science education.</p>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+              <a href="#" class="btn btn-sm btn-outline-primary rounded-circle me-2"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="btn btn-sm btn-outline-info rounded-circle me-2"><i class="bx bxl-twitter"></i></a>
+              <a href="#" class="btn btn-sm btn-outline-danger rounded-circle"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+  
+        
+        <div class="col-md-4">
+          <div class="card staff-card h-100 text-center">
+            <div class="card-header bg-transparent border-0">
+              <img src="tr1.jpg" class="rounded-circle staff-img shadow mx-auto d-block" alt="Head of Arts">
+            </div>
+            <div class="card-body">
+                <h5 class="fw-bold text-warning">Ms. Alice</h5>
+
+              <p class="mb-2 text-cyan">Head of Arts</p>
+              <p class="small">Inspiring creativity and self-expression through arts and drama.</p>
+            </div>
+            <div class="card-footer bg-transparent border-0">
+              <a href="#" class="btn btn-sm btn-outline-primary rounded-circle me-2"><i class="bx bxl-facebook"></i></a>
+              <a href="#" class="btn btn-sm btn-outline-info rounded-circle me-2"><i class="bx bxl-twitter"></i></a>
+              <a href="#" class="btn btn-sm btn-outline-danger rounded-circle"><i class="bx bxl-linkedin"></i></a>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+
+
+
+
+
+
+
+
+
+
+<section class="py-5 text-white" style="background: url('logo-removebg-preview.png') center/cover no-repeat; position: relative;">
+    <div class="overlay" style="position: absolute; top:0; left:0; width:100%; height:100%; background: rgba(0,0,0,0.6);"></div>
+    
+    <div class="container position-relative">
+        <h2 class="fw-bold text-center mb-5 section-title">
+            Our Mission & Vision
+          </h2>
+          
+      <div class="row align-items-center">
+        
+        
+        <div class="col-md-6 mb-4">
+          <div class="p-4 shadow rounded bg-light text-dark h-100">
+            <h4 class="fw-bold text-success mb-3">Our Mission</h4>
+            <p>
+              The school's mission emphasizes literacy, numeracy, spiritual growth, and the inculcation of moral values, while its vision is to produce well-rounded, self-confident students
+            </p>
+          </div>
+        </div>
+  
+        <div class="col-md-6 mb-4">
+          <div class="p-4 shadow rounded bg-light text-dark h-100">
+            <h4 class="fw-bold text-info mb-3">Our Vision</h4>
+            <p>
+              To produce well-rounded, self-confident students.
+              To enable these students to take their place in national or global society.
+            </p>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  <section class="py-5 bounce-on-scroll" 
+
+  style="background: url('testimonials.jpg') center/cover no-repeat; 
+         position: relative; opacity:1;">
+    <div class="container">
+      <h2 class="fw-bold text-center mb-5 position-relative" style="color: #598ef1;">
+        What Our Parents & Students Say
+      </h2>
+  
+  
+      <div class="row g-4">
+  
+   
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 text-center text-white" style="background-color: #0d1b4c; border: none; padding: 20px;">
+          
+            <div class="card-body">
+              <img src="parent1.jpeg" class="rounded-circle mb-3" style="width:80px; height:80px; object-fit:cover;" alt="Mrs. Grace N.">
+              <p class="card-text fst-italic">"The teachers here are very supportive and my child has grown academically and socially."</p>
+              <h5 class="fw-bold text-warning">Mrs. Grace N.</h5>
+              <p class="small text-light">Parent</p>
+            </div>
+          </div>
+        </div>
+  
+     
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 text-center text-white" style="background-color: #0d1b4c; border: none; padding: 20px;">
+            <div class="card-body">
+              <img src="student1.jpg" class="rounded-circle mb-3" style="width:80px; height:80px; object-fit:cover;" alt="James K.">
+              <p class="card-text fst-italic">"I love participating in music and sports. The school makes learning exciting."</p>
+              <h5 class="fw-bold text-warning">lina.</h5>
+              <p class="small text-light">Student</p>
+            </div>
+          </div>
+        </div>
+  
+    
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 text-center text-white" style="background-color: #0d1b4c; border: none; padding: 20px;">
+            <div class="card-body">
+              <img src="parent2.jpeg" class="rounded-circle mb-3" style="width:80px; height:80px; object-fit:cover;" alt="Mr. Daniel M.">
+              <p class="card-text fst-italic">"The discipline and values instilled here are unmatched. Truly the best choice for our kids."</p>
+              <h5 class="fw-bold text-warning">Mr. Daniel M.</h5>
+              <p class="small text-light">Parent</p>
+            </div>
+          </div>
+        </div>
+  
+     
+        <div class="col-md-6 col-lg-3">
+          <div class="card h-100 text-center text-white" style="background-color: #0d1b4c; border: none; padding: 20px;">
+            <div class="card-body">
+              <img src="student3.jpeg" class="rounded-circle mb-3" style="width:80px; height:80px; object-fit:cover;" alt="Sophie L.">
+              <p class="card-text fst-italic">"The school environment is amazing, and I have made wonderful friends while learning."</p>
+              <h5 class="fw-bold text-warning">Sophie L.</h5>
+              <p class="small text-light">Student</p>
+            </div>
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  
+  <section class="py-5 text-center" style="background-color: #f8f9fa;">
+    <div class="container">
+      <div class="row justify-content-center align-items-center">
+        
+        <div class="col-auto">
+          <div class="line"></div>
+        </div>
+  
+       
+        <div class="col-auto">
+          <img src="logo-removebg-preview.png" alt="Kianda School Logo" class="img-fluid" style="width: 120px; height: auto;">
+          <h2 class="mt-3" style="color: #0d1b4c;">Together We Are The St. Ursular’s School</h2>
+        </div>
+  
+        
+        <div class="col-auto">
+          <div class="line"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+  <footer class="pt-5" style="background-color: #0f1838; color: #f1f1f1;">
+    <div class="container">
+  
+      <div class="row">
+  
+        
+        <div class="col-md-4 mb-4">
+          <img src="logo-removebg-preview.png" alt="School Logo" style="width:120px;" class="mb-3">
+          <p class="mb-1">St. Ursular's School</p>
+          <p class="mb-1"><i class="bi bi-geo-alt-fill me-2"></i>Kitale-Cherangani Rd/C48, Kitale</p>
+          <p class="mb-1"><i class="bi bi-envelope-fill me-2"></i>Ursulineschool2006@gmail.com</p>
+          <p class="mb-1"><i class="bi bi-telephone-fill me-2"></i>0724 133020</p>
+        </div>
+  
+        
+        <div class="col-md-2 mb-4">
+          <h5 class="text-warning mb-3">About Us</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-light text-decoration-none">Who We Are</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Formation Activities</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Scholarships</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Co-curricular Activities</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Calendar Activities</a></li>
+          </ul>
+        </div>
+  
+        
+        <div class="col-md-2 mb-4">
+          <h5 class="text-warning mb-3">Our School</h5>
+          <ul class="list-unstyled">
+            <li><a href="ursular's junior school" class="text-light text-decoration-none">St Ursula's Preparatory School</a></li>
+            <li><a href="ursular's junior school" class="text-light text-decoration-none">Ursular's Junior School</a></li>
+            <li><a href="ursular's primary school" class="text-light text-decoration-none">Ursular's Primary School</a></li>
+            <li><a href="ursular's secondary school" class="text-light text-decoration-none">Ursular's Secondary School</a></li>
+          </ul>
+        </div>
+  
+        <div class="col-md-2 mb-4">
+          <h5 class="text-warning mb-3">Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-light text-decoration-none">Contact Us</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Data Protection Policy</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Cookie Policy</a></li>
+            <li><a href="#" class="text-light text-decoration-none">FAQs</a></li>
+          </ul>
+        </div>
+  
+      </div>
+  
+    
+      <div class="text-center border-top border-secondary pt-3">
+        <p class="mb-0 small">&copy; 2025 St. Ursular's School. All rights reserved. Designed by vebrasolutions.fwh.is </p>
+      </div>
+  
+    </div>
+  </footer>
+  
+
+  <!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const counters = document.querySelectorAll('.auto-count[data-target]');
+  if (!counters.length) return;
+
+  // animation function
+  function animateCount(el) {
+    const target = parseInt(el.getAttribute('data-target'), 10);
+    if (isNaN(target)) return;
+
+    const duration = 2000; // ms
+    const start = performance.now();
+
+    function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+
+    function frame(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const value = Math.floor(easeOutCubic(progress) * target);
+
+      el.textContent = value + '+'; // with +
+      if (progress < 1) {
+        requestAnimationFrame(frame);
+      } else {
+        el.textContent = target + '+';
+      }
+    }
+
+    requestAnimationFrame(frame);
+  }
+
+  // observe when counters are visible
+  const io = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCount(entry.target);
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(c => io.observe(c));
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const sections = document.querySelectorAll('.bounce-on-scroll');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.3 });
+
+  sections.forEach(sec => observer.observe(sec));
+});
+</script>
+</div>
+</body>
+</html>
