@@ -84,28 +84,42 @@
     0%   { transform: translateX(100%); }
     100% { transform: translateX(-100%); }
   }
+  #heroCarousel .carousel-item img {
+  width: 100%;
+  height: 70vh; 
+  object-fit: cover; 
+}
+
+
+
+.staff-img {
+    width: 150px;        
+    height: 150px;
+    object-fit: cover;
+  }
+
+  @media (max-width: 768px) {
+    .staff-img {
+      width: 120px;      /* shrink images on tablets/phones */
+      height: 120px;
+    }
+    .staff-card {
+      margin-bottom: 20px;  /* spacing between cards */
+    }
+  }
+
+  @media (max-width: 576px) {
+    .staff-img {
+      width: 100px;      /* even smaller for very small phones */
+      height: 100px;
+    }
+    .staff-card {
+      margin-bottom: 25px; /* extra breathing space */
+    }
+  }
 
 
   
-    .staff-card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      border-radius: 15px;
-    }
-    .staff-card:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    }
-    .staff-img {
-      width: 150px;
-      height: 150px;
-      object-fit: cover;
-      margin-top: -70px;
-      border: 5px solid #fff;
-    }
-    .card-img-top {
-      position: relative;
-      top: -50px;
-    }
     .text-cyan {
   color: rgb(19, 152, 161) !important;
 }
@@ -335,46 +349,43 @@ section.text-center h2 {
     </div>
   </nav>
 
-<div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
     <div class="carousel-inner">
   
-      
+      <!-- Slide 1 -->
       <div class="carousel-item active">
-        <img src="hero (2).jpg" class="d-block w-100" alt="Library">
-        <div class="carousel-caption d-none d-md-block">
-          <h2 class="fw-bold">St. Ursular’soffers excellent student facilities</h2>
+        <img src="hero (2).jpg" class="d-block w-100" alt="Library" style="height: 80vh; object-fit: cover;">
+        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center text-center h-100">
+          <h2 class="fw-bold">St. Ursular’s offers excellent student facilities</h2>
           <p>Including a modern Library for digital learning.</p>
           <a href="#apply" class="btn btn-warning btn-lg fw-bold text-dark btn-apply-now">
             Apply Now
           </a>
-          
-
-
         </div>
       </div>
   
-     
+      <!-- Slide 2 -->
       <div class="carousel-item">
-        <img src="sports.jpg" class="d-block w-100" alt="Sports">
-        
-       
-        <div class="carousel-caption d-none d-md-block  bg-opacity-50 p-3 rounded">
+        <img src="sports.jpg" class="d-block w-100" alt="Sports" style="height: 80vh; object-fit: cover;">
+        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center text-center h-100">
           <h2 class="fw-bold text-warning">Balanced Academics & Sports</h2>
-          <p class="fw-bold custom-dark-blue">
+          <p class="fw-bold custom-white">
             We nurture talents in athletics, football, and more.
-          </p>
-          
 
+
+          </p>
+          <a href="#apply" class="btn btn-warning btn-lg fw-bold text-dark btn-apply-now">
+            Apply Now
+          </a>
         </div>
       </div>
-      
   
-      
+      <!-- Slide 3 -->
       <div class="carousel-item">
-        <img src="modern classrom.jpg" class="d-block w-100" alt="Classrooms">
-        <div class="carousel-caption d-none d-md-block">
+        <img src="modern classrom.jpg" class="d-block w-100" alt="Classrooms" style="height: 80vh; object-fit: cover;">
+        <div class="carousel-caption d-flex flex-column justify-content-center align-items-center text-center h-100">
           <h2 class="fw-bold">Modern Classrooms</h2>
-          <p>Conducive learning environment for all learners.</p>
+          <p class="fw-bold custom-dark-blue">Conducive learning environment for all learners.</p>
           <a href="#apply" class="btn btn-warning btn-lg fw-bold text-dark btn-apply-now">
             Apply Now
           </a>
@@ -383,7 +394,7 @@ section.text-center h2 {
   
     </div>
   
- 
+    <!-- Controls -->
     <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
       <span class="carousel-control-prev-icon" aria-hidden="true"></span>
       <span class="visually-hidden">Previous</span>
@@ -401,7 +412,6 @@ section.text-center h2 {
     </div>
   </div>
   
-
 
 <section class="py-5 bg-light">
     <div class="container">
@@ -771,7 +781,7 @@ section.text-center h2 {
   </section>
   
   
-  <footer class="pt-5" style="background-color: #0f1838; color: #f1f1f1;">
+<footer class="pt-5" style="background-color: #0d1b4c; color: #f1f1f1;">
     <div class="container">
   
       <div class="row">
