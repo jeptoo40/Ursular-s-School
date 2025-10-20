@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>St. Ursular’s School </title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+  <style>
+    .top-bar {
+      background: #0d263d;
+      color: #fff;
+      padding: 5px 20px;
+      font-size: 14px;
+      text-align: center; 
+    }
+    .top-bar a {
+      color: #ffcc00;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    
+    .navbar {
+  background: #f0ecec;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: relative;
+  z-index: 1000; 
+}
+    .navbar-brand img {
+      height: 80px;
+    }
+    .nav-link {
+      font-weight: 500;
+      margin-right: 15px;
+    }
+    .nav-link:hover {
+      color: #004080 !important;
+    }
+    .top-bar .btn {
+ position: right;
+  font-size: 12px;
+  padding: 3px 8px;
+}
+@media (max-width: 768px) {
+  .top-bar .d-flex {
+    flex-direction: column;
+    text-align: center;
+    gap: 5px;
+  }
+}
+.custom-dark-blue {
+  color: #0d1b4c;   
+  font-size: 1.25rem; 
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; 
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.6); 
+}
+.btn-apply-now {
+  border-radius: 50px; 
+  padding: 12px 30px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  transition: all 0.3s ease-in-out;
+}
+
+.btn-apply-now:hover {
+  background-color: #19530e !important; 
+  color: #fff !important;              
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.35);
+}
+.moving-text {
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    animation: moveText 12s linear infinite;
+  }
+
+  @keyframes moveText {
+    0%   { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+  #heroCarousel .carousel-item img {
+  width: 100%;
+  height: 70vh; 
+  object-fit: cover; 
+}
+
+
+
+.staff-img {
+    width: 150px;        
+    height: 150px;
+    object-fit: cover;
+  }
+
+  @media (max-width: 768px) {
+    .staff-img {
+      width: 120px;     
+      height: 120px;
+    }
+    .staff-card {
+      margin-bottom: 20px;  
+    }
+  }
+
+
+  @media (max-width: 576px) {
+    .staff-img {
+      width: 100px;     
+      height: 100px;
+    }
+    .staff-card {
+      margin-bottom: 25px;
+    }
+  }
+
+
+  
+    .text-cyan {
+  color: rgb(19, 152, 161) !important;
+}
+
+.section-title {
+    display: inline-block;
+    border-bottom: 3px solid #f1c40f; 
+    padding-bottom: 5px;
+  }
+ 
+    .section-title {
+      display: inline-block;
+      border-bottom: 3px solid #0d6efd; 
+      padding-bottom: 5px;
+    }
+
+
+
+   
+@keyframes bounceIn {
+  0% { transform: translateY(50px); opacity: 0; }
+  50% { transform: translateY(-10px); opacity: 1; }
+  70% { transform: translateY(5px); }
+  100% { transform: translateY(0); }
+}
+
+.bounce-on-scroll {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.bounce-on-scroll.visible {
+  animation: bounceIn 1s ease forwards;
+}
+
+
+
+
+
+.testimonial-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-8px) scale(1.05);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+}
+
+
+.testimonial-card img {
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover img {
+  transform: scale(1.1);
+}
+
+.line {
+  width: 100px;
+  height: 2px;
+  background-color: #0d1b4c;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+
+section.text-center h2 {
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: #0d1b4c;
+}
+  
+  </style>
+</head>
+<body>
+      <!-- Top Bar -->
+  <div class="container-fluid bg-dark text-light py-2 fixed-top" style="top:0; z-index:1030;">
+    <div class="d-flex justify-content-between align-items-center flex-wrap">
+      <div class="text-warning fw-bold">
+        📞 Tel: 
+        <a href="tel:0724133020" class="btn btn-sm btn-outline-warning ms-1">
+          0724133020
+        </a>
+      </div>
+      <div>
+        <a href="mailto:Ursulineschool2006@gmail.com" class="fw-bold text-decoration-none" style="color:rgb(255, 251, 0);">
+          <i class='bx bx-envelope-open me-2'></i>Ursulineschool2006@gmail.com
+        </a>
+      </div>
+      <div class="d-flex align-items-center">
+        <span class="me-3 fw-bold moving-text text-info">
+          Welcome to <strong>St. Ursular’s School</strong>
+        </span>
+        <a href="#apply" class="btn btn-warning btn-sm fw-bold text-dark">
+          Apply Now
+        </a>
+      </div>
+    </div>
+  </div>
+  
+
+  
+  <nav class="navbar navbar-expand-lg" style="margin-top: 100px;">
+
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center" href="#">
+            <div class="d-flex align-items-center">
+            
+             
+              <img src="logo-removebg-preview.png" alt="St. Ursular's Logo">
+            </div>
+          </a>
+          
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+    
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+        <ul class="navbar-nav">
+         
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="academicsDropdown" role="button" data-bs-toggle="dropdown">
+              ACADEMICS
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="primary.html">Primary School</a></li>
+              <li><a class="dropdown-item" href="Preparatory.html">Preparatory School</a></li>
+              <li><a class="dropdown-item" href="#">Kindergarten</a></li>
+              <li><a class="dropdown-item" href="CBE.html">CBE</a></li>
+              <li><a class="dropdown-item" href="CBC.html">CBC</a></li>
+              <li><a class="dropdown-item" href="Junior school.html">Junior Secondary</a></li>
+              <li><a class="dropdown-item" href="Senior Secondary.html">Senior Secondary</a></li>
+              <li><a class="dropdown-item" href="#">Academic Calendar</a></li>
+       
+
+            </ul>
+          </li>
+
+       
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="programsDropdown" role="button" data-bs-toggle="dropdown">
+              PROGRAMS
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="Remidial.html">Remedial / Enrichment Classes</a></li>
+              <li><a class="dropdown-item" href="language programs.html">Language Programs</a></li>
+              <li><a class="dropdown-item" href="Stem.html">STEM / ICT Integration</a></li>
+             
+              <li><a class="dropdown-item" href="#">Exams</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="newsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                ADMISSIONS
+            </a>
+
+            <ul class="dropdown-menu" aria-labelledby="newsDropdown">
+                <li><a class="dropdown-item" href="Admission.html">Admission Requirements (Primary & Senior High)</a></li>
+            
+                <li><a class="dropdown-item" href="Tuition Fee.html">Tuition & Fees</a></li>
+                <li><a class="dropdown-item" href="Application Forms.html">Application Forms </a></li>
+               
+              </ul>
+            </li>
+    
+          <li class="nav-item"><a class="nav-link" href="Gallery.html">GALLERY</a></li>
+
+
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="newsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                STUDENT LIFE
+            </a>
+
+            <ul class="dropdown-menu" aria-labelledby="newsDropdown">
+                <li><a class="dropdown-item" href="CLUBS & SOCIETIES.html">Clubs & Societies</a></li>
+                <li><a class="dropdown-item" href="SPORTS.html">Sports & Physical Education</a></li>
+                <li><a class="dropdown-item" href="ARTS.html">Arts & Culture</a></li>
+                <li><a class="dropdown-item" href="SCHOOL EVENTS.html">School Events & Celebrations</a></li>
+           
+                <li><a class="dropdown-item" href="LEADERSHIP.html">Leadership & Prefects</a></li>
+              </ul>
+        </li>
+
+
+
+
+          <li class="nav-item"><a class="nav-link" href="about us.html">ABOUT US</a></li>
+
+          
+          <li class="nav-item"><a class="nav-link" href="Contact us.html">CONTACT US</a></li>
+
+       
+
+<li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="#" id="newsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      NEWS & ANNOUNCEMENTS
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="newsDropdown">
+      <li>
+        <a class="dropdown-item" href="Upcoming Events.html">
+          <i class='bx bx-calendar-event'></i> Upcoming Events
+        </a>
+      </li>
+      <li>
+        <a class="dropdown-item" href="Term Dates & Exams.html">
+          <i class='bx bx-book-open'></i> Term Dates & Exams
+        </a>
+      </li>
+      <li>
+        <a class="dropdown-item" href="Fee structure.html">
+          <i class='bx bx-money'></i> Fee Structure
+        </a>
+      </li>
+      <li>
+        <a class="dropdown-item" href="Bulletins.html">
+          <i class='bx bx-news'></i> Bulletins
+        </a>
+      </li>
+    </ul>
+  </li>
+  
+      </div>
+    </div>
+  </nav>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  <footer class="pt-5" style="background-color: #0d1b4c; color: #f1f1f1;">
+    <div class="container">
+      <div class="row justify-content-center">
+        
+        <div class="col-md-4 mb-4 text-center text-md-start">
+          <img src="logo-removebg-preview.png" alt="School Logo" style="width:120px;" class="mb-3">
+          <p class="mb-1">St. Ursular's School</p>
+          <p class="mb-1"><i class="bi bi-geo-alt-fill me-2"></i>Kitale-Cherangani Rd/C48, Kitale</p>
+          <p class="mb-1"><i class="bi bi-envelope-fill me-2"></i>Ursulineschool2006@gmail.com</p>
+          <p class="mb-1"><i class="bi bi-telephone-fill me-2"></i>0724 133020</p>
+        </div>
+  
+        <div class="col-md-2 mb-4 text-center text-md-start">
+          <h5 class="text-warning mb-3">About Us</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-light text-decoration-none">Who We Are</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Formation Activities</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Scholarships</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Co-curricular Activities</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Calendar Activities</a></li>
+          </ul>
+        </div>
+  
+        <div class="col-md-2 mb-4 text-center text-md-start">
+          <h5 class="text-warning mb-3">Our School</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-light text-decoration-none">St Ursula's Preparatory School</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Ursular's Junior School</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Ursular's Primary School</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Ursular's Secondary School</a></li>
+          </ul>
+        </div>
+  
+        <div class="col-md-2 mb-4 text-center text-md-start">
+          <h5 class="text-warning mb-3">Quick Links</h5>
+          <ul class="list-unstyled">
+            <li><a href="#" class="text-light text-decoration-none">Contact Us</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Data Protection Policy</a></li>
+            <li><a href="#" class="text-light text-decoration-none">Cookie Policy</a></li>
+            <li><a href="#" class="text-light text-decoration-none">FAQs</a></li>
+          </ul>
+        </div>
+  
+      </div>
+  
+      <div class="text-center border-top border-secondary pt-3">
+        <p class="mb-0 small">&copy; 2025 St. Ursular's School. All rights reserved | Designed by vebrasolutions.fwh.is</p>
+      </div>
+    </div>
+  </footer>
+  
+
+  <!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const counters = document.querySelectorAll('.auto-count[data-target]');
+  if (!counters.length) return;
+
+  // animation function
+  function animateCount(el) {
+    const target = parseInt(el.getAttribute('data-target'), 10);
+    if (isNaN(target)) return;
+
+    const duration = 2000; // ms
+    const start = performance.now();
+
+    function easeOutCubic(t) { return 1 - Math.pow(1 - t, 3); }
+
+    function frame(now) {
+      const elapsed = now - start;
+      const progress = Math.min(elapsed / duration, 1);
+      const value = Math.floor(easeOutCubic(progress) * target);
+
+      el.textContent = value + '+'; // with +
+      if (progress < 1) {
+        requestAnimationFrame(frame);
+      } else {
+        el.textContent = target + '+';
+      }
+    }
+
+    requestAnimationFrame(frame);
+  }
+
+  // observe when counters are visible
+  const io = new IntersectionObserver((entries, obs) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        animateCount(entry.target);
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.5 });
+
+  counters.forEach(c => io.observe(c));
+});
+
+
+document.addEventListener('DOMContentLoaded', () => {
+  const sections = document.querySelectorAll('.bounce-on-scroll');
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.3 });
+
+  sections.forEach(sec => observer.observe(sec));
+});
+</script>
+</div>
+</body>
+</html>
