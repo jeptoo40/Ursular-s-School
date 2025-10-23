@@ -29,7 +29,6 @@ if (isset($_POST['add_student'])) {
 
 
 
-// Handle edit (update)
 if (isset($_POST['update_student'])) {
     $id = $_POST['id'];
     $fullname = $_POST['fullname'];
@@ -41,12 +40,14 @@ if (isset($_POST['update_student'])) {
     $update->bind_param("ssssi", $fullname, $gender, $class, $admission_date, $id);
 
     if ($update->execute()) {
-        echo "<script>alert('Student updated successfully'); window.location.href='students.php';</script>";
+        header("Location: students.php");
+        exit();
     } else {
-        echo "<script>alert('Update failed: " . $conn->error . "');</script>";
+        $update_error = "Update failed: " . $conn->error;
     }
+    
 }
-// Delete Student
+
 if (isset($_GET['delete'])) {
     $id = $_GET['delete'];
     $conn->query("DELETE FROM students WHERE id=$id");
@@ -139,7 +140,7 @@ body {
   <a href="#"><i class="fa fa-hand-holding-usd me-2"></i> Payments</a>
   <a href="staff.php"><i class="fa fa-briefcase me-2"></i> Staff</a>
   <a href="attendance.php"><i class="fa fa-calendar-check me-2"></i> Attendance</a>
-  <a href="#"><i class="fa fa-book-open me-2"></i> Subjects / Courses</a>
+  <a href="subjects.php"><i class="fa fa-book-open me-2"></i> Subjects / Courses</a>
   <a href="#"><i class="fa fa-file-alt me-2"></i> Exams</a>
   <a href="#"><i class="fa fa-chart-line me-2"></i> Reports</a>
   <a href="#"><i class="fa fa-cog me-2"></i> Settings</a>
@@ -189,41 +190,54 @@ body {
           </tr>
 
           <!-- Edit Modal -->
-          <div class="modal fade" id="editModal<?= $row['id'] ?>" tabindex="-1">
-            <div class="modal-dialog">
-              <form method="post" class="modal-content">
-                <div class="modal-header bg-warning text-white">
-                  <h5 class="modal-title">Edit Student</h5>
-                  <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-                </div>
-                <div class="modal-body">
-                  <input type="hidden" name="id" value="<?= $row['id'] ?>">
-                  <div class="mb-3">
-                    <label>Full Name</label>
-                    <input type="text" name="fullname" class="form-control" value="<?= $row['fullname'] ?>" required>
-                  </div>
-                  <div class="mb-3">
-                    <label>Gender</label>
-                    <select name="gender" class="form-control">
-                      <option value="Male" <?= $row['gender']=='Male'?'selected':'' ?>>Male</option>
-                      <option value="Female" <?= $row['gender']=='Female'?'selected':'' ?>>Female</option>
-                    </select>
-                  </div>
-                  <div class="mb-3">
-                    <label>Class</label>
-                    <input type="text" name="class" class="form-control" value="<?= $row['class'] ?>" required>
-                  </div>
-                  <div class="mb-3">
-                    <label>Admission Date</label>
-                    <input type="date" name="admission_date" class="form-control" value="<?= $row['admission_date'] ?>" required>
-                  </div>
-                </div>
-                <div class="modal-footer">
-                  <button type="submit" name="update_student" class="btn btn-warning">Update</button>
-                </div>
-              </form>
-            </div>
+          <!-- Edit Modal -->
+<div class="modal fade" id="editModal<?= $row['id'] ?>" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <form method="post">
+        <div class="modal-header bg-warning text-white">
+          <h5 class="modal-title">Edit Student</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+
+        <div class="modal-body">
+          <input type="hidden" name="id" value="<?= $row['id'] ?>">
+
+          <div class="mb-3">
+            <label class="form-label">Full Name</label>
+            <input type="text" name="fullname" class="form-control" 
+                   value="<?= htmlspecialchars($row['fullname']) ?>" required>
           </div>
+
+          <div class="mb-3">
+            <label class="form-label">Gender</label>
+            <select name="gender" class="form-control">
+              <option value="Male" <?= $row['gender']=='Male'?'selected':'' ?>>Male</option>
+              <option value="Female" <?= $row['gender']=='Female'?'selected':'' ?>>Female</option>
+            </select>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Class</label>
+            <input type="text" name="class" class="form-control" 
+                   value="<?= htmlspecialchars($row['class']) ?>" required>
+          </div>
+
+          <div class="mb-3">
+            <label class="form-label">Admission Date</label>
+            <input type="date" name="admission_date" class="form-control" 
+                   value="<?= htmlspecialchars($row['admission_date']) ?>" required>
+          </div>
+        </div>
+
+        <div class="modal-footer">
+          <button type="submit" name="update_student" class="btn btn-warning">Update</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
           <?php endwhile; ?>
         <?php else: ?>
           <tr><td colspan="6" class="text-center">No students found</td></tr>

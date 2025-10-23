@@ -119,7 +119,7 @@ body {
 <a href="#"><i class="fa fa-hand-holding-usd me-2"></i> Payments</a>
 <a href="staff.php"><i class="fa fa-briefcase me-2"></i> Staff</a>
 <a href="attendance.php"><i class="fa fa-calendar-check me-2"></i> Attendance</a>
-<a href="#"><i class="fa fa-book-open me-2"></i> Subjects / Courses</a>
+<a href="subjects.php"><i class="fa fa-book-open me-2"></i> Subjects / Courses</a>
 <a href="#"><i class="fa fa-file-alt me-2"></i> Exams</a>
 <a href="#"><i class="fa fa-chart-line me-2"></i> Reports</a>
 <a href="#"><i class="fa fa-cog me-2"></i> Settings</a>
