@@ -48,10 +48,10 @@ body {
   top: 0;                
   left: 0;
   width: 250px;
-  height: 100vh;         /* full height */
+  height: 100vh;         
   background-color: darkslategrey;
   color: #fff;
-  overflow-y: auto;      /* scroll if too long */
+  overflow-y: auto;     
   flex-shrink: 0;
   padding-bottom: 20px;
 }
@@ -77,7 +77,7 @@ body {
   border-left: 4px solid #fff;
 }
 
-/* Main content needs left margin equal to sidebar width */
+
 .main-content {
   margin-left: 250px;
   background-color: #f8f9fa;
@@ -120,8 +120,8 @@ body {
 <a href="staff.php"><i class="fa fa-briefcase me-2"></i> Staff</a>
 <a href="attendance.php"><i class="fa fa-calendar-check me-2"></i> Attendance</a>
 <a href="subjects.php"><i class="fa fa-book-open me-2"></i> Subjects / Courses</a>
-<a href="#"><i class="fa fa-file-alt me-2"></i> Exams</a>
-<a href="#"><i class="fa fa-chart-line me-2"></i> Reports</a>
+<a href="exams.php"><i class="fa fa-file-alt me-2"></i> Exams</a>
+<a href="reports.php"><i class="fa fa-chart-line me-2"></i> Reports</a>
 <a href="#"><i class="fa fa-cog me-2"></i> Settings</a>
 <a href="#"><i class="fa fa-sign-out-alt me-2"></i> Logout</a>
 

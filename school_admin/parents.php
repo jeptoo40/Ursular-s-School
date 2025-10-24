@@ -143,7 +143,7 @@ $students_result = $conn->query("SELECT id, fullname FROM students ORDER BY full
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   }
 
-  /* --- Critical Fix for Non-editable Modal --- */
+
   .modal {
     position: fixed !important;
     z-index: 99999 !important;
@@ -175,8 +175,8 @@ $students_result = $conn->query("SELECT id, fullname FROM students ORDER BY full
   <a href="staff.php"><i class="fa fa-briefcase me-2"></i> Staff</a>
   <a href="attendance.php"><i class="fa fa-calendar-check me-2"></i> Attendance</a>
   <a href="subjects.php"><i class="fa fa-book-open me-2"></i> Subjects / Courses</a>
-  <a href="#"><i class="fa fa-file-alt me-2"></i> Exams</a>
-  <a href="#"><i class="fa fa-chart-line me-2"></i> Reports</a>
+  <a href="exams.php"><i class="fa fa-file-alt me-2"></i> Exams</a>
+  <a href="reports.php"><i class="fa fa-chart-line me-2"></i> Reports</a>
   <a href="#"><i class="fa fa-cog me-2"></i> Settings</a>
   <a href="#"><i class="fa fa-sign-out-alt me-2"></i> Logout</a>
 </div>

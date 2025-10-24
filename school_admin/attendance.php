@@ -21,13 +21,13 @@ if (isset($_POST['mark_attendance'])) {
     $success = "Attendance saved for $date";
 }
 
-// Fetch students
+
 $students_result = $conn->query("SELECT id, fullname FROM students ORDER BY fullname ASC");
 
-// Selected date
+
 $filter_date = $_POST['attendance_date'] ?? $_GET['date'] ?? date('Y-m-d');
 
-// Fetch existing attendance
+
 $attendance_result = $conn->query("SELECT * FROM attendance WHERE attendance_date='$filter_date'");
 $attendance_data = [];
 while ($row = $attendance_result->fetch_assoc()) {
@@ -80,8 +80,8 @@ body {
     <a href="staff.php"><i class="fa fa-briefcase me-2"></i> Staff</a>
     <a href="attendance.php" class="bg-white text-success fw-bold"><i class="fa fa-calendar-check me-2"></i> Attendance</a>
     <a href="subjects.php"><i class="fa fa-book-open me-2"></i> Subjects / Courses</a>
-    <a href="#"><i class="fa fa-file-alt me-2"></i> Exams</a>
-    <a href="#"><i class="fa fa-chart-line me-2"></i> Reports</a>
+    <a href="exams.php"><i class="fa fa-file-alt me-2"></i> Exams</a>
+    <a href="reports.php"><i class="fa fa-chart-line me-2"></i> Reports</a>
     <a href="#"><i class="fa fa-hand-holding-usd me-2"></i> Payments</a>
     <a href="#"><i class="fa fa-cog me-2"></i> Settings</a>
     <a href="#"><i class="fa fa-sign-out-alt me-2"></i> Logout</a>

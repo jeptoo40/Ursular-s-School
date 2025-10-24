@@ -115,7 +115,7 @@ if (isset($_POST['update_teacher'])) {
   <a href="#"><i class="fa fa-hand-holding-usd me-2"></i> Payments</a>
   <a href="staff.php"><i class="fa fa-briefcase me-2"></i> Staff</a>
   <a href="attendance.php"><i class="fa fa-calendar-check me-2"></i> Attendance</a>
-  <a href="#"><i class="fa fa-file-alt me-2"></i> Exams</a>
+  <a href="exams.php"><i class="fa fa-file-alt me-2"></i> Exams</a>
   <a href="#"><i class="fa fa-cog me-2"></i> Settings</a>
   <a href="#"><i class="fa fa-sign-out-alt me-2"></i> Logout</a>
 </div>

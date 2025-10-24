@@ -127,7 +127,7 @@ body {
 </head>
 <body>
 
-<!-- Sidebar -->
+
 <div class="sidebar">
   <img src="../logo.jpg" alt="Logo">
   <h4>Admin Panel</h4>
@@ -141,13 +141,13 @@ body {
   <a href="staff.php"><i class="fa fa-briefcase me-2"></i> Staff</a>
   <a href="attendance.php"><i class="fa fa-calendar-check me-2"></i> Attendance</a>
   <a href="subjects.php"><i class="fa fa-book-open me-2"></i> Subjects / Courses</a>
-  <a href="#"><i class="fa fa-file-alt me-2"></i> Exams</a>
-  <a href="#"><i class="fa fa-chart-line me-2"></i> Reports</a>
+  <a href="exams.php"><i class="fa fa-file-alt me-2"></i> Exams</a>
+  <a href="reports.php"><i class="fa fa-chart-line me-2"></i> Reports</a>
   <a href="#"><i class="fa fa-cog me-2"></i> Settings</a>
   <a href="#"><i class="fa fa-sign-out-alt me-2"></i> Logout</a>
 </div>
 
-<!-- Main Content -->
+
 <div class="main-content">
   <div class="topbar">
     <h4>Manage Students</h4>
@@ -160,7 +160,7 @@ body {
     </div>
   </div>
 
-  <!-- Students Table -->
+  
   <div class="card p-3">
     <h5 class="mb-3">Students List</h5>
     <table class="table table-striped align-middle">
@@ -189,8 +189,7 @@ body {
             </td>
           </tr>
 
-          <!-- Edit Modal -->
-          <!-- Edit Modal -->
+         
 <div class="modal fade" id="editModal<?= $row['id'] ?>" tabindex="-1" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered">
     <div class="modal-content">
@@ -247,7 +246,7 @@ body {
   </div>
 </div>
 
-<!-- Add Modal -->
+
 <div class="modal fade" id="addStudentModal" tabindex="-1">
   <div class="modal-dialog">
     <form method="post" class="modal-content">
