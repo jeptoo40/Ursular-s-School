@@ -1,7 +1,8 @@
 <?php
-require_once 'config.php'; // uses $conn
+session_start();
+require_once 'config.php'; 
 
-// Handle search
+
 $search = "";
 if (isset($_GET['search'])) {
     $search = $conn->real_escape_string($_GET['search']);
@@ -12,7 +13,7 @@ if (isset($_GET['search'])) {
 
 $result = $conn->query($query);
 
-// Handle add teacher
+
 if (isset($_POST['add_teacher'])) {
     $fullname = $_POST['fullname'];
     $subject = $_POST['subject'];
@@ -29,7 +30,7 @@ if (isset($_POST['add_teacher'])) {
     }
 }
 
-// Handle delete
+
 if (isset($_GET['delete'])) {
     $id = intval($_GET['delete']);
     $conn->query("DELETE FROM teachers WHERE id=$id");
@@ -53,6 +54,16 @@ if (isset($_GET['delete'])) {
     font-family: 'Segoe UI', sans-serif;
     background-color: #f8f9fa;
   }
+  .topbar {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 10px 20px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 
   .sidebar {
     position: fixed;
@@ -107,7 +118,7 @@ if (isset($_GET['delete'])) {
   }
 </style>
 
-<!-- Sidebar -->
+
 <div class="sidebar">
   <img src="../logo.jpg" alt="Logo">
   <h4>Admin Panel</h4>
@@ -122,26 +133,41 @@ if (isset($_GET['delete'])) {
   <a href="subjects.php"><i class="fa fa-book-open me-2"></i> Subjects / Courses</a>
   <a href="exams.php"><i class="fa fa-file-alt me-2"></i> Exams</a>
   <a href="reports.php"><i class="fa fa-chart-line me-2"></i> Reports</a>
-  <a href="#"><i class="fa fa-cog me-2"></i> Settings</a>
-  <a href="#"><i class="fa fa-sign-out-alt me-2"></i> Logout</a>
+
+  <a href="#" data-bs-toggle="modal" data-bs-target="#settingsModal">
+  <i class="fa fa-cog me-2"></i> Settings
+</a>
+  <a href="../auth/logout.php"><i class="fa fa-sign-out-alt me-2"></i> Logout</a>
 </div>
 
-<!-- Main Content -->
+
 <div class="main-content">
+
+
+<div class="topbar">
+      <h5>Admin Dashboard Overview</h5>
+      <div>
+        <i class="fa fa-user-circle me-2 text-success"></i>
+        <span><?php echo htmlspecialchars($admin_name ?? 'Admin'); ?>
+</span>
+      </div>
+    </div>
+
+
   <div class="d-flex justify-content-between align-items-center mb-4">
     <h3 class="text-success">Manage Teachers</h3>
 
-    <!-- Search Form -->
+
     <form class="d-flex" method="get">
       <input type="text" name="search" class="form-control me-2" placeholder="Search by name or subject" value="<?php echo htmlspecialchars($search); ?>">
       <button class="btn btn-success" type="submit">Search</button>
     </form>
 
-    <!-- Add Teacher Button -->
+   
     <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addTeacherModal">+ Add Teacher</button>
   </div>
 
-  <!-- Teachers Table -->
+
   <div class="card">
     <div class="card-body">
       <table class="table table-striped">
@@ -185,7 +211,7 @@ if (isset($_GET['delete'])) {
   </div>
 </div>
 
-<!-- Add Teacher Modal -->
+
 <div class="modal fade" id="addTeacherModal" tabindex="-1">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -220,6 +246,71 @@ if (isset($_GET['delete'])) {
     </div>
   </div>
 </div>
+
+
+
+
+<!-- ⚙️ Settings Modal -->
+<div class="modal fade" id="settingsModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content border-0 shadow-lg rounded-4">
+
+      <div class="modal-header bg-success text-white rounded-top-4">
+        <h5 class="modal-title"><i class="fa fa-cog me-2"></i> Account Settings</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <ul class="nav nav-tabs mb-3">
+          <li class="nav-item">
+            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile">Profile</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#password">Change Password</button>
+          </li>
+        </ul>
+
+        <div class="tab-content">
+          <!-- Profile -->
+          <div class="tab-pane fade show active" id="profile">
+            <form method="POST" action="update_settings.php">
+              <div class="mb-3">
+                <label class="form-label">Full Name</label>
+                <input type="text" name="full_name" class="form-control" value="<?php echo htmlspecialchars($_SESSION['fullname']); ?>" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" name="email" class="form-control" value="<?php echo htmlspecialchars($_SESSION['email']); ?>" required>
+              </div>
+              <button type="submit" name="update_profile" class="btn btn-success w-100">Save Changes</button>
+            </form>
+          </div>
+
+          <!-- Change Password -->
+          <div class="tab-pane fade" id="password">
+            <form method="POST" action="update_settings.php">
+              <div class="mb-3">
+                <label class="form-label">Current Password</label>
+                <input type="password" name="current_password" class="form-control" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">New Password</label>
+                <input type="password" name="new_password" class="form-control" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Confirm Password</label>
+                <input type="password" name="confirm_password" class="form-control" required>
+              </div>
+              <button type="submit" name="update_password" class="btn btn-warning w-100">Change Password</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

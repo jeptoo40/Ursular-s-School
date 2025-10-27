@@ -122,8 +122,12 @@ body {
 <a href="subjects.php"><i class="fa fa-book-open me-2"></i> Subjects / Courses</a>
 <a href="exams.php"><i class="fa fa-file-alt me-2"></i> Exams</a>
 <a href="reports.php"><i class="fa fa-chart-line me-2"></i> Reports</a>
-<a href="#"><i class="fa fa-cog me-2"></i> Settings</a>
-<a href="#"><i class="fa fa-sign-out-alt me-2"></i> Logout</a>
+
+<a href="#" data-bs-toggle="modal" data-bs-target="#settingsModal">
+  <i class="fa fa-cog me-2"></i> Settings
+</a>
+
+<a href="../auth/logout.php"><i class="fa fa-sign-out-alt me-2"></i> Logout</a>
 
   </div>
 
@@ -240,7 +244,7 @@ body {
     </div>
   </div>
 
-  <!-- Right: Attendance Doughnut Chart -->
+
 <div class="col-md-4 mb-4 d-flex">
   <div  style="max-width: 300px; margin-left: auto;">
    
@@ -250,8 +254,68 @@ body {
 
 
 </div>
+<div class="modal fade" id="settingsModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content border-0 shadow-lg rounded-4">
+
+      <div class="modal-header bg-success text-white rounded-top-4">
+        <h5 class="modal-title"><i class="fa fa-cog me-2"></i> Account Settings</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <ul class="nav nav-tabs mb-3">
+          <li class="nav-item">
+            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile">Profile</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#password">Change Password</button>
+          </li>
+        </ul>
+
+        <div class="tab-content">
+          <!-- Profile -->
+          <div class="tab-pane fade show active" id="profile">
+            <form method="POST" action="update_settings.php">
+              <div class="mb-3">
+                <label class="form-label">Full Name</label>
+                <input type="text" name="full_name" class="form-control" value="<?php echo htmlspecialchars($_SESSION['fullname']); ?>" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" name="email" class="form-control" value="<?php echo htmlspecialchars($_SESSION['email']); ?>" required>
+              </div>
+              <button type="submit" name="update_profile" class="btn btn-success w-100">Save Changes</button>
+            </form>
+          </div>
+
+          <!-- Change Password -->
+          <div class="tab-pane fade" id="password">
+            <form method="POST" action="update_settings.php">
+              <div class="mb-3">
+                <label class="form-label">Current Password</label>
+                <input type="password" name="current_password" class="form-control" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">New Password</label>
+                <input type="password" name="new_password" class="form-control" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Confirm Password</label>
+                <input type="password" name="confirm_password" class="form-control" required>
+              </div>
+              <button type="submit" name="update_password" class="btn btn-warning w-100">Change Password</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>

@@ -1,10 +1,10 @@
 <?php
 require_once 'config.php';
 
-// Get date (default = today)
+
 $date = $_GET['date'] ?? date('Y-m-d');
 
-// Fetch real attendance records for that date
+
 $query = "
     SELECT 
         a.id, 
@@ -22,7 +22,7 @@ $stmt->bind_param("s", $date);
 $stmt->execute();
 $result = $stmt->get_result();
 
-// Count totals based on actual records
+
 $present = $absent = $late = 0;
 $attendance_data = [];
 

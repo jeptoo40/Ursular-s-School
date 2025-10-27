@@ -1,6 +1,11 @@
 <?php
-require_once __DIR__ . '/../config.php';
+session_start();
+require_once '../school_admin/config.php'; 
+
 session_unset();
 session_destroy();
-header('Location: /auth/login.php');
+
+
+header("Location: ../index.php"); 
 exit;
+?>

@@ -2,10 +2,10 @@
 require_once 'config.php';
 session_start();
 
-// Default admin name
+
 $admin_name = $_SESSION['admin_name'] ?? 'Administrator';
 
-// Fetch data
+
 $students = $conn->query("SELECT id, fullname, gender, class, admission_date FROM students ORDER BY class ASC");
 $teachers = $conn->query("SELECT id, fullname, subject, phone, hire_date FROM teachers ORDER BY fullname ASC");
 $exams = $conn->query("SELECT id, exam_name, class, exam_date, description FROM exams ORDER BY exam_date DESC");
@@ -106,20 +106,23 @@ table th {
 <div class="sidebar">
     <img src="../logo.jpg" alt="Logo">
     <h5 class="text-center mb-3">Admin Panel</h5>
-    <a href="dashboard.php"><i class="fa fa-home me-2"></i>Dashboard</a>
-    <a href="students.php"><i class="fa fa-user-graduate me-2"></i>Students</a>
-    <a href="teachers.php"><i class="fa fa-chalkboard-teacher me-2"></i>Teachers</a>
-    <a href="parents.php"><i class="fa fa-users me-2"></i>Parents</a>
-    <a href="staff.php"><i class="fa fa-briefcase me-2"></i>Staff</a>
-    <a href="attendance.php"><i class="fa fa-calendar-check me-2"></i>Attendance</a>
-    <a href="subjects.php"><i class="fa fa-book-open me-2"></i>Subjects</a>
-    <a href="exams.php"><i class="fa fa-file-alt me-2"></i>Exams</a>
-    <a href="reports.php" class="active"><i class="fa fa-chart-line me-2"></i>Reports</a>
-    <a href="#"><i class="fa fa-hand-holding-usd me-2"></i>Payments</a>
-    <a href="#"><i class="fa fa-cog me-2"></i>Settings</a>
-    <a href="#"><i class="fa fa-sign-out-alt me-2"></i>Logout</a>
-</div>
+    <a href="dashboard.php"><i class="fa fa-home me-2"></i> Dashboard</a>
+    <a href="students.php"><i class="fa fa-user-graduate me-2"></i> Students</a>
+    <a href="teachers.php"><i class="fa fa-chalkboard-teacher me-2"></i> Teachers</a>
+    <a href="parents.php"><i class="fa fa-users me-2"></i> Parents</a>
+  <a href="staff.php"><i class="fa fa-briefcase me-2"></i> Staff</a>
+    <a href="attendance.php"><i class="fa fa-calendar-check me-2"></i> Attendance</a>
+    <a href="subjects.php"><i class="fa fa-book-open me-2"></i> Subjects / Courses</a>
+    <a href="exams.php"><i class="fa fa-file-alt me-2"></i> Exams</a>
 
+    <a href="reports.php" class="active"><i class="fa fa-chart-line me-2"></i>Reports</a>
+    <a href="#"><i class="fa fa-hand-holding-usd me-2"></i> Payments</a>
+     
+    <a href="#" data-bs-toggle="modal" data-bs-target="#settingsModal">
+  <i class="fa fa-cog me-2"></i> Settings
+</a>
+    <a href="../auth/logout.php"><i class="fa fa-sign-out-alt me-2"></i> Logout</a>
+</div>
 <div class="main-content">
 
     <div class="topbar">
@@ -137,7 +140,7 @@ table th {
         </button>
     </div>
 
-    <!-- Students -->
+  
     <h3 class="section-title">Students Report</h3>
     <table class="table table-bordered table-striped">
         <thead>
@@ -156,7 +159,7 @@ table th {
         </tbody>
     </table>
 
-    <!-- Teachers -->
+
     <h3 class="section-title">Teachers Report</h3>
     <table class="table table-bordered table-striped">
         <thead>
@@ -175,7 +178,7 @@ table th {
         </tbody>
     </table>
 
-    <!-- Exams -->
+    
     <h3 class="section-title">Exams Report</h3>
     <table class="table table-bordered table-striped">
         <thead>
@@ -194,7 +197,7 @@ table th {
         </tbody>
     </table>
 
-    <!-- Attendance -->
+    
     <h3 class="section-title">Attendance Report</h3>
     <table class="table table-bordered table-striped">
         <thead><tr><th>Class</th><th>Total Days</th><th>Present Days</th><th>Attendance Rate (%)</th></tr></thead>
@@ -210,7 +213,7 @@ table th {
         </tbody>
     </table>
 
-    <!-- Performance -->
+   
     <h3 class="section-title">Performance Summary</h3>
     <table class="table table-bordered table-striped">
         <thead><tr><th>Class</th><th>Average Score</th></tr></thead>
@@ -223,7 +226,69 @@ table th {
         <?php endwhile; ?>
         </tbody>
     </table>
+<!-- ⚙️ Settings Modal -->
+<div class="modal fade" id="settingsModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content border-0 shadow-lg rounded-4">
+
+      <div class="modal-header bg-success text-white rounded-top-4">
+        <h5 class="modal-title"><i class="fa fa-cog me-2"></i> Account Settings</h5>
+        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"></button>
+      </div>
+
+      <div class="modal-body">
+        <ul class="nav nav-tabs mb-3">
+          <li class="nav-item">
+            <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile">Profile</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#password">Change Password</button>
+          </li>
+        </ul>
+
+        <div class="tab-content">
+          <!-- Profile -->
+          <div class="tab-pane fade show active" id="profile">
+            <form method="POST" action="update_settings.php">
+              <div class="mb-3">
+                <label class="form-label">Full Name</label>
+                <input type="text" name="full_name" class="form-control" value="<?php echo htmlspecialchars($_SESSION['fullname']); ?>" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Email</label>
+                <input type="email" name="email" class="form-control" value="<?php echo htmlspecialchars($_SESSION['email']); ?>" required>
+              </div>
+              <button type="submit" name="update_profile" class="btn btn-success w-100">Save Changes</button>
+            </form>
+          </div>
+
+          <!-- Change Password -->
+          <div class="tab-pane fade" id="password">
+            <form method="POST" action="update_settings.php">
+              <div class="mb-3">
+                <label class="form-label">Current Password</label>
+                <input type="password" name="current_password" class="form-control" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">New Password</label>
+                <input type="password" name="new_password" class="form-control" required>
+              </div>
+              <div class="mb-3">
+                <label class="form-label">Confirm Password</label>
+                <input type="password" name="confirm_password" class="form-control" required>
+              </div>
+              <button type="submit" name="update_password" class="btn btn-warning w-100">Change Password</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
 
 </div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
