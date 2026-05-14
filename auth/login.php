@@ -16,13 +16,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $user = $result->fetch_assoc();
 
         if (password_verify($password, $user['password'])) {
-            // ✅ Store base session data
+    
             $_SESSION['id'] = $user['id'];
             $_SESSION['fullname'] = $user['full_name'];
             $_SESSION['email'] = $user['email'];
             $_SESSION['role'] = $user['role'];
 
-            // ✅ If parent, get student_id by matching parent fullname
+            
             if ($role === 'parent') {
                 $pstmt = $conn->prepare("SELECT student_id FROM parents WHERE fullname = ?");
                 $pstmt->bind_param("s", $user['full_name']);
