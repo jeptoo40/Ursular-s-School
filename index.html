@@ -872,7 +872,7 @@ document.addEventListener('DOMContentLoaded', () => {
     requestAnimationFrame(frame);
   }
 
-  // observe when counters are visible
+  // counters are visible
   const io = new IntersectionObserver((entries, obs) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
